@@ -41,6 +41,8 @@ on:
         description: 'BUILD_TARGET'
         required: true
         default: 'recovery'
+permissions:
+  contents: write
 
 jobs:
   build:
