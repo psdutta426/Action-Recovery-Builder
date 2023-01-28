@@ -42,6 +42,10 @@ on:
         required: true
         default: 'recovery'
 
+permissions:
+
+  contents: write
+
 jobs:
   build:
     if: github.event.repository.owner.id == github.event.sender.id
