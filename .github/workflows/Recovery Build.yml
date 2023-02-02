@@ -111,7 +111,8 @@ jobs:
     - name: Repo Sync
       run: |
         repo sync -j$(nproc --all) --force-sync
-        ln -s /usr/lib/libncursesw.so.6 /usr/lib/libtinfo.so.5
+        sudo ln -s /usr/lib/libtinfo.so /usr/lib/libtinfo.so.5
+        sudo ln -s /usr/lib/libncursesw.so.6 /usr/lib/libtinfo.so.5
       working-directory: workspace
       
     - name: Clone device tree
