@@ -97,6 +97,7 @@ jobs:
         curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
         chmod a+x ~/bin/repo
         sudo ln -sf ~/bin/repo /usr/bin/repo
+        sudo ln -s /usr/lib/libncursesw.so.6 /usr/lib/libtinfo.so.5
       
     - name: Initialize repo
       run: |
@@ -111,7 +112,7 @@ jobs:
     - name: Repo Sync
       run: |
         repo sync -j$(nproc --all) --force-sync
-        sudo ln -s /usr/lib/libtinfo.so /usr/lib/libtinfo.so.5
+
         
       working-directory: workspace
       
